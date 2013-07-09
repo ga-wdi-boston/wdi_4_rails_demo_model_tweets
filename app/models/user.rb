@@ -1,6 +1,14 @@
 # Class name is singular
 # Tables names are plural (in the migrations, schema)
 class User < ActiveRecord::Base
+  has_many :tweets
+
+# This is a callback.
+# It calls the method named grab_recent_tweets after the User is created
+  after_create :grab_recent_tweets
+
+
+
   # Attributes are available because they are in the schema
   # not because we define them here
 
@@ -26,4 +34,8 @@ end
   # To otherwise update them, you must use the assignment operator like
   # User.first.is_admin = true
 
+  private
+  def grab_recent_tweets
+    # Code to ask Twitter for tweets
+  end
 end
