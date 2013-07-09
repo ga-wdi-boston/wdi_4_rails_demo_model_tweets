@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709144139) do
+ActiveRecord::Schema.define(:version => 20130709145816) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130709144139) do
     t.datetime "updated_at",     :null => false
     t.string   "gender"
     t.string   "favorite_color"
+    t.boolean  "is_admin"
   end
 
 end
